@@ -1,5 +1,5 @@
-import VEXnetDriver.VEXnetDriver;
-import VEXnetDriver.VEXnetPacket;
+import VexnextDriver.VEXnetDriver;
+import VexnextDriver.VEXnetPacket;
 
 import java.util.concurrent.TimeUnit;
 

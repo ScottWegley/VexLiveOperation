@@ -1,4 +1,4 @@
-package VEXnetDriver;
+package VexnextDriver;
 
 /**
  * Code for communicating using the VEXnet
