@@ -23,6 +23,12 @@ public class App {
             driver = new VEXnetDriver(comPorts[0], VEXnetDriver.DeviceType.VEXnet_Joystick_Partner_Port);
         }
 
+        Command.setDriver(driver);
+
+        scheduler.add(new Command(Command.FULL_FORWARD, 5000));
+        scheduler.add(new Command(Command.FULL_OPEN_CLAW, 250));
+        scheduler.start();
+
     }
 }
 
