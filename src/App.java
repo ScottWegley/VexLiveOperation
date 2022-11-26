@@ -20,6 +20,9 @@ class ReturnLogger extends Thread {
 
     private boolean active = false;
 
+    public void deactivate(){
+        active = false;
+    }
 }
 
 /*
