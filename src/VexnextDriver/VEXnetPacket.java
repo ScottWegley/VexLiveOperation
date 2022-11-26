@@ -78,7 +78,7 @@ public class VEXnetPacket {
     /** the amount of bytes that are expected to be contained by this packet **/
     byte size;
     /** the contents of the packet **/
-    byte[] data;
+    public byte[] data;
     boolean includeChecksum = true;
 
     /**
