@@ -16,9 +16,10 @@ public class App {
             System.out.println("Using: " + comPorts[0]);
             driver = new VEXnetDriver(comPorts[0], VEXnetDriver.DeviceType.VEXnet_Joystick_Partner_Port);
         }
-    }
-}
+class ReturnLogger extends Thread {
 
+
+}
 
 /*
  * Thread that contains a VEXnetPacket to send.
