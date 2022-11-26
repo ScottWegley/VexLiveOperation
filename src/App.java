@@ -9,6 +9,8 @@ public class App {
 
     public static void main(String[] args) {
 
+        scheduler.add(new Command(Command.FULL_FORWARD, 5000));
+        scheduler.add(new Command(Command.FULL_OPEN_CLAW, 250));
 
         String[] comPorts = VEXnetDriver.availableComPorts();
         if (comPorts.length == 0) {
@@ -18,6 +20,9 @@ public class App {
             System.out.println("Using: " + comPorts[0]);
             driver = new VEXnetDriver(comPorts[0], VEXnetDriver.DeviceType.VEXnet_Joystick_Partner_Port);
         }
+
+    }
+}
 
 /* 
  * A Thread-Like class to store a FIFO queue of commands.
