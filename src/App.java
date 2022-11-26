@@ -20,4 +20,7 @@ public class App {
 }
 
 class Command extends Thread implements DefaultPackets {
+    private VEXnetPacket toExecute;
+    private long duration;
+    private static VEXnetDriver driver;
 }
