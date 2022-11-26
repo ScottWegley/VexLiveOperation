@@ -32,4 +32,17 @@ public interface DefaultPackets {
         }
         else return FULL_STOP;
     }
+
+    private static VEXnetPacket claw(int i1) {
+        if(i1 <= 255 && i1 >= 0){
+            return VEXnetPacket.compileControllerPacket(
+                (byte) (127), (byte) (127), (byte) (127), (byte) (i1),
+                false, false,
+                false, false,
+                false, false, false, false,
+                false, false, false, false,
+                (byte) 127, (byte) 127, (byte) 127);
+        }
+        else return FULL_STOP;
+    }
 }
