@@ -20,6 +20,17 @@ class ReturnLogger extends Thread {
 
     private boolean active = false;
 
+    @Override
+    public void run() {
+        active = true;
+        while (active) {
+            VEXnetPacket packet_receive = App.driver.ReceiveVexProtocolPacket();
+            if (packet_receive != null) {
+                System.out.println(packet_receive);
+            }
+        }
+    }
+
     public void deactivate(){
         active = false;
     }
