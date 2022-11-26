@@ -18,6 +18,7 @@ public class App {
         }
 class ReturnLogger extends Thread {
 
+    private boolean active = false;
 
 }
 
