@@ -1,8 +1,6 @@
 import VexnextDriver.VEXnetDriver;
 import VexnextDriver.VEXnetPacket;
 
-import java.util.concurrent.TimeUnit;
-
 public class example {
     private static VEXnetDriver driver = null;
 
@@ -33,15 +31,12 @@ public class example {
         // The first byte controls the left wheel's motor, the second byte controls the right wheel's motor,
         // the third byte controls the arm's motor, and the forth byte controls the claw's motor
         VEXnetPacket packet_send = VEXnetPacket.compileControllerPacket(
-                (byte)(127), (byte)(127), (byte)(127), (byte)(127),
+                (byte)(255), (byte)(255), (byte)(255), (byte)(255),
                 false, false,
                 false, false,
                 false, false, false, false,
                 false, false, false, false,
                 (byte)127, (byte)127, (byte)127);
-
-        // Send the packet to the robot
-        driver.SendVexProtocolPacket(packet_send);
 
         // Attempt to retrieve a packet from the robot.
         // This packet will not contain any useful information, but can be used to detect if the
@@ -51,5 +46,6 @@ public class example {
         // If the function above returned null, no packet was received.
         if (packet_receive != null)
             System.out.println(packet_receive); // Print out the contents of the packet.
+        System.out.println("Ending");
     }
 }
