@@ -19,6 +19,13 @@ public class App {
 class Scheduler extends Thread {
     LinkedList<Command> commandQueue = new LinkedList<Command>();
     ReturnLogger logger = new ReturnLogger();
+    public void add(Command c) {
+        commandQueue.add(c);
+    }
+
+    public void reset() {
+        commandQueue.clear();
+    }
 }
 
 /*
