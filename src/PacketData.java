@@ -1,0 +1,21 @@
+public enum PacketData {
+    Ch1,
+    Ch2,
+    Ch3,
+    Ch4,
+    Btn5D,
+    Btn5U,
+    Btn6D,
+    Btn6U,
+    Btn7D,
+    Btn7L,
+    Btn7R,
+    Btn7U,
+    Btn8D,
+    Btn8L,
+    Btn8R,
+    Btn8U,
+    AccelY,
+    AccelX,
+    AccelZ
+}
