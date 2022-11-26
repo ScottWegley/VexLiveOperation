@@ -16,6 +16,12 @@ public class App {
             System.out.println("Using: " + comPorts[0]);
             driver = new VEXnetDriver(comPorts[0], VEXnetDriver.DeviceType.VEXnet_Joystick_Partner_Port);
         }
+
+/* 
+ * A Thread-Like class to store a FIFO queue of commands.
+ * On run, these commands are iterated through and executed. 
+ * Previous commands must finish before continuing to the next.
+ */
 class Scheduler extends Thread {
     LinkedList<Command> commandQueue = new LinkedList<Command>();
     ReturnLogger logger = new ReturnLogger();
