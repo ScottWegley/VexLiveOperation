@@ -19,6 +19,13 @@ public class App {
     }
 }
 
+
+/*
+ * Thread that contains a VEXnetPacket to send.
+ * The thread is paused for a specified duration after sending.
+ * Then a packet to stop all motors is sent before ending.
+ * This last packets makes the transition to the next command smoother on the motors.
+ */
 class Command extends Thread implements DefaultPackets {
     private VEXnetPacket toExecute;
     private long duration;
