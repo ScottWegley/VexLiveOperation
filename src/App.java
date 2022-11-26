@@ -10,9 +10,6 @@ public class App {
 
     public static void main(String[] args) {
 
-        scheduler.add(new Command(Command.FULL_FORWARD, 5000));
-        scheduler.add(new Command(Command.FULL_OPEN_CLAW, 250));
-
         String[] comPorts = VEXnetDriver.availableComPorts();
         if (comPorts.length == 0) {
             System.out.println("There are no com ports available.");
@@ -44,7 +41,7 @@ class Scheduler extends Thread {
     @Override
     public void run() {
         try {
-            logger.start();
+            //logger.start();
             for (Command command : commandQueue) {
                 command.start();
                 command.join();
@@ -79,7 +76,7 @@ class ReturnLogger extends Thread {
         while (active) {
             VEXnetPacket packet_receive = App.driver.ReceiveVexProtocolPacket();
             if (packet_receive != null) {
-                System.out.println(packet_receive);
+                //System.out.println(packet_receive);
             }
         }
     }
@@ -175,9 +172,9 @@ class Command extends Thread {
     @Override
     public void run() {
         try {
-            driver.SendVexProtocolPacket(toExecute);
+            //driver.SendVexProtocolPacket(toExecute);
             Thread.sleep(duration);
-            driver.SendVexProtocolPacket(FULL_STOP);
+            //driver.SendVexProtocolPacket(FULL_STOP);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
