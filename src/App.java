@@ -18,3 +18,6 @@ public class App {
         }
     }
 }
+
+class Command extends Thread implements DefaultPackets {
+}
