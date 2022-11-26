@@ -5,6 +5,8 @@ import VexnextDriver.VEXnetPacket;
 public class App {
 
     public static VEXnetDriver driver = null;
+    private static Scheduler scheduler = new Scheduler();
+
     public static void main(String[] args) {
 
 
