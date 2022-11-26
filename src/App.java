@@ -16,6 +16,10 @@ public class App {
             System.out.println("Using: " + comPorts[0]);
             driver = new VEXnetDriver(comPorts[0], VEXnetDriver.DeviceType.VEXnet_Joystick_Partner_Port);
         }
+/*
+ * Thread to check our driver for return packets.
+ * Until deactivated, log any packets received.
+ */
 class ReturnLogger extends Thread {
 
     private boolean active = false;
