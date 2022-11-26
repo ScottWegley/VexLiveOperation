@@ -17,6 +17,8 @@ public class App {
             driver = new VEXnetDriver(comPorts[0], VEXnetDriver.DeviceType.VEXnet_Joystick_Partner_Port);
         }
 class Scheduler extends Thread {
+    LinkedList<Command> commandQueue = new LinkedList<Command>();
+    ReturnLogger logger = new ReturnLogger();
 }
 
 /*
