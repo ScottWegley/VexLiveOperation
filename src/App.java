@@ -23,4 +23,8 @@ class Command extends Thread implements DefaultPackets {
     private VEXnetPacket toExecute;
     private long duration;
     private static VEXnetDriver driver;
+    public static void setDriver(VEXnetDriver driv){
+        driver = driv;
+    }
+
 }
