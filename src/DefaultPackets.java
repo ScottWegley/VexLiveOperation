@@ -19,4 +19,17 @@ public interface DefaultPackets {
                     (byte) 127, (byte) 127, (byte) 127);
         } else return FULL_STOP;
     }
+
+    private static VEXnetPacket arm(int i1) {
+        if(i1 <= 255 && i1 >= 0){
+            return VEXnetPacket.compileControllerPacket(
+                (byte) (127), (byte) (127), (byte) (i1), (byte) (127),
+                false, false,
+                false, false,
+                false, false, false, false,
+                false, false, false, false,
+                (byte) 127, (byte) 127, (byte) 127);
+        }
+        else return FULL_STOP;
+    }
 }
