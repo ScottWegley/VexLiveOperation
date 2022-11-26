@@ -172,10 +172,10 @@ class Command extends Thread {
     @Override
     public void run() {
         try {
-            System.out.println("Command Begins \n");
+            System.out.println("Command Begins");
             for(int i = 0; i < this.toExecute.data.length; i++){
                 if(this.toExecute.data[i] != Command.FULL_STOP.data[i]){
-                    System.out.println(PacketData.values()[i] + ": " + this.toExecute.data[i] + "\n");
+                    System.out.println(PacketData.values()[i] + ": " + this.toExecute.data[i]);
                 }
             }
             //driver.SendVexProtocolPacket(toExecute);
