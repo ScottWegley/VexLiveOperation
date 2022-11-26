@@ -23,6 +23,16 @@ class Command extends Thread implements DefaultPackets {
     private VEXnetPacket toExecute;
     private long duration;
     private static VEXnetDriver driver;
+
+    /**
+     * @param exec A VexnetPacket to be executed
+     * @param dur How long to execute in milliseconds.
+     */
+    public Command(VEXnetPacket exec, long dur) {
+        this.toExecute = exec;
+        this.duration = dur;
+    }
+
     public static void setDriver(VEXnetDriver driv){
         driver = driv;
     }
