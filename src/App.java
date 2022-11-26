@@ -37,4 +37,18 @@ class Command extends Thread implements DefaultPackets {
         driver = driv;
     }
 
+    /**
+     * @TODO Log any values from the packet that aren't stop values.
+     */
+    @Override
+    public void run() {
+        try {
+            driver.SendVexProtocolPacket(toExecute);
+            Thread.sleep(duration);
+            driver.SendVexProtocolPacket(FULL_STOP);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
