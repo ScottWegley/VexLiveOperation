@@ -44,7 +44,6 @@ class Scheduler extends Thread {
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
-            logger.deactivate();
         } finally {
             logger.deactivate();
         }
