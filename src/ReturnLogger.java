@@ -1,4 +1,4 @@
-import VexnextDriver.VEXnetPacket;
+import VexnetDriver.VEXnetPacket;
 
 /**
  * Thread to check our driver for return packets.

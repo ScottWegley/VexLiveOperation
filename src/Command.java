@@ -1,5 +1,5 @@
-import VexnextDriver.VEXnetDriver;
-import VexnextDriver.VEXnetPacket;
+import VexnetDriver.VEXnetDriver;
+import VexnetDriver.VEXnetPacket;
 
 /**
  * Thread that contains a VEXnetPacket to send.

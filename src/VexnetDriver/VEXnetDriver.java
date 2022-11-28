@@ -1,4 +1,4 @@
-package VexnextDriver;// https://github.com/Fazecast/jSerialComm
+package VexnetDriver;// https://github.com/Fazecast/jSerialComm
 import com.fazecast.jSerialComm.SerialPort;
 
 import java.security.InvalidParameterException;
