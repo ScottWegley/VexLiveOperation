@@ -28,14 +28,14 @@ class Scheduler extends Thread {
     }
 
     /** Add a command to the {@link #commandQueue} */
-    public void add(Command c) {
+    public synchronized void add(Command c) {
         commandQueue.add(c);
     }
 
     /**
      *  Clear the {@link #commandQueue}.
     */
-    public void reset() {
+    public synchronized void reset() {
         commandQueue.clear();
     }
 }
