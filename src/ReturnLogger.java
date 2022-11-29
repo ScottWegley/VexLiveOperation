@@ -16,7 +16,7 @@ class ReturnLogger extends Thread {
     public void run() {
         active = true;
         while (active) {
-            VEXnetPacket packet_receive = App.driver.ReceiveVexProtocolPacket();
+            VEXnetPacket packet_receive = Autonomous.driver.ReceiveVexProtocolPacket();
             if (packet_receive != null) {
                 // System.out.println(packet_receive);
             }
