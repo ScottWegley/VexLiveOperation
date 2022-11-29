@@ -15,7 +15,7 @@ class Scheduler extends Thread {
     @Override
     public void run() {
         try {
-            // logger.start();
+            logger.start();
             for (Command command : commandQueue) {
                 command.start();
                 command.join();
