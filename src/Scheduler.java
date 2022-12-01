@@ -38,4 +38,10 @@ class Scheduler extends Thread {
     public synchronized void reset() {
         commandQueue.clear();
     }
+
+    @Override
+    public void interrupt() {
+        logger.deactivate();
+        super.interrupt();
+    }
 }
