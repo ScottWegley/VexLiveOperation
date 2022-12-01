@@ -9,6 +9,7 @@ public class SinglePacketControl extends Thread {
     private static VEXnetDriver driver;
     private static ReturnLogger logger = new ReturnLogger();
 
+    private PowerSupplier supplier;
 
     public SinglePacketControl(VEXnetDriver driv) {
         currentState = PacketBuilder.FULL_STOP;
@@ -41,7 +42,8 @@ public class SinglePacketControl extends Thread {
 
     }
 
-    public synchronized VEXnetPacket getPacket(){
-        return currentState;
+    public void setSupplier(PowerSupplier inSupplier) {
+        supplier = inSupplier;
+        activate();
     }
 }
