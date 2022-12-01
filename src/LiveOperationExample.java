@@ -1,7 +1,7 @@
 import Util.SinglePacketControl;
 import VexnetDriver.VEXnetDriver;
 
-public class LiveOperation {
+public class LiveOperationExample {
     
     public static VEXnetDriver driver;
     private static SinglePacketControl spc;
