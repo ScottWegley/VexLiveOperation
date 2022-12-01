@@ -9,6 +9,12 @@ public class SinglePacketControl extends Thread {
     private static VEXnetDriver driver;
     private static ReturnLogger logger = new ReturnLogger();
 
+
+    public SinglePacketControl(VEXnetDriver driv) {
+        currentState = PacketBuilder.FULL_STOP;
+        driver = driv;
+    }
+
     @Override
     public void run() {
         logger.start();
