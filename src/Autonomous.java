@@ -15,7 +15,7 @@ public class Autonomous {
         } else {
             System.out.println("Using: " + comPorts[0]);
             driver = new VEXnetDriver(comPorts[0], VEXnetDriver.DeviceType.VEXnet_Joystick_Partner_Port);
-            scheduler = new Scheduler();
+            scheduler = new Scheduler(driver);
             Command.setDriver(driver);
         }
 

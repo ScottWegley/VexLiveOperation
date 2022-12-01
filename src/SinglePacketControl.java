@@ -6,14 +6,15 @@ public class SinglePacketControl extends Thread {
     private static VEXnetPacket currentState;
 
     private static boolean active = false;
-    private static VEXnetDriver driver;
-    private static ReturnLogger logger = new ReturnLogger();
+    private VEXnetDriver driver;
+    private static ReturnLogger logger;
 
     private PowerSupplier supplier;
 
     public SinglePacketControl(VEXnetDriver driv) {
         currentState = PacketBuilder.FULL_STOP;
-        driver = driv;
+        this.driver = driv;
+        logger = new ReturnLogger(this.driver);
     }
 
     @Override

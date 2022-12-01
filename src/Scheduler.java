@@ -1,5 +1,7 @@
 import java.util.LinkedList;
 
+import VexnetDriver.VEXnetDriver;
+
 /**
  * A Thread-Like class to store a FIFO queue of commands.
  * On run, these commands are iterated through and executed.
@@ -10,7 +12,14 @@ class Scheduler extends Thread {
      * Added to through {@link #add(Command)} and cleared with {@link #reset()}
      */
     private LinkedList<Command> commandQueue = new LinkedList<Command>();
-    private ReturnLogger logger = new ReturnLogger();
+    private ReturnLogger logger;
+
+    private VEXnetDriver driver;
+
+    public Scheduler(VEXnetDriver driv){
+        this.driver = driv;
+        logger = new ReturnLogger(this.driver);
+    }
 
     @Override
     public void run() {
