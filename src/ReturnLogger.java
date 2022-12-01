@@ -1,4 +1,5 @@
 import VexnetDriver.VEXnetPacket;
+import VexnetDriver.VEXnetDriver;
 
 /**
  * Thread to check our driver for return packets.
@@ -12,11 +13,17 @@ class ReturnLogger extends Thread {
      */
     private boolean active = false;
 
+    private VEXnetDriver driver;
+
+    public ReturnLogger(VEXnetDriver driv){
+        driver = driv;
+    }
+
     @Override
     public void run() {
         activate();
         while (active) {
-            VEXnetPacket packet_receive = Autonomous.driver.ReceiveVexProtocolPacket();
+            VEXnetPacket packet_receive = driver.ReceiveVexProtocolPacket();
             if (packet_receive != null) {
                 System.out.println(packet_receive);
             }
