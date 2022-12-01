@@ -18,7 +18,12 @@ public class SinglePacketControl extends Thread {
 
     @Override
     public void run() {
+        if (!active)
+            throw new RuntimeException("Power Supplier not set.");
         logger.start();
+        while (active) {
+            updatePacket();
+            driver.SendVexProtocolPacket(getPacket());
         }
         logger.deactivate();
     }
