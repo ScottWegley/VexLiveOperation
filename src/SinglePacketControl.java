@@ -1,12 +1,12 @@
 import VexnetDriver.VEXnetDriver;
 import VexnetDriver.VEXnetPacket;
 
-public class SinglePacketControl extends Thread{
+public class SinglePacketControl extends Thread {
     
-    static private VEXnetPacket currentState = PacketBuilder.FULL_STOP;
+    private static VEXnetPacket currentState;
 
-    static private boolean active = false;
-    static VEXnetDriver driver;
+    private static boolean active = false;
+    private static VEXnetDriver driver;
 
     @Override
     public void run() {
