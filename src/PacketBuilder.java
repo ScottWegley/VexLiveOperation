@@ -18,7 +18,7 @@ public class PacketBuilder {
     static VEXnetPacket FULL_CLOSE_CLAW = claw(0);
 
     /** Function used to construct packets that send only driving signals. */
-    private static VEXnetPacket drive(int i1, int i2) {
+    public static VEXnetPacket drive(int i1, int i2) {
         if (i1 <= 255 && i1 >= 0 && i2 <= 255 && i2 >= 0) {
             return VEXnetPacket.compileControllerPacket(
                     (byte) (i1), (byte) (i2), (byte) (127), (byte) (127),
@@ -32,7 +32,7 @@ public class PacketBuilder {
     }
 
     /** Function used to construct packets that send only arm control signals. */
-    private static VEXnetPacket arm(int i1) {
+    public static VEXnetPacket arm(int i1) {
         if (i1 <= 255 && i1 >= 0) {
             return VEXnetPacket.compileControllerPacket(
                     (byte) (127), (byte) (127), (byte) (i1), (byte) (127),
@@ -46,7 +46,7 @@ public class PacketBuilder {
     }
 
     /** Function used to construct packets that send only claw control signals. */
-    private static VEXnetPacket claw(int i1) {
+    public static VEXnetPacket claw(int i1) {
         if (i1 <= 255 && i1 >= 0) {
             return VEXnetPacket.compileControllerPacket(
                     (byte) (127), (byte) (127), (byte) (127), (byte) (i1),
