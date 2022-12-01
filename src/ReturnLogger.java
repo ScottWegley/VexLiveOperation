@@ -14,7 +14,7 @@ class ReturnLogger extends Thread {
 
     @Override
     public void run() {
-        active = true;
+        activate();
         while (active) {
             VEXnetPacket packet_receive = Autonomous.driver.ReceiveVexProtocolPacket();
             if (packet_receive != null) {
@@ -27,7 +27,15 @@ class ReturnLogger extends Thread {
      * Useless if the thread has not been started.
      * @see #active
     */
-    public void deactivate() {
+    public synchronized void deactivate() {
         active = false;
+    }
+
+    /** (OPTIONAL) Used to enable the thread loop. 
+     * Only useful before thread start.
+     * @see #active
+    */
+    public synchronized void activate() {
+        active = true;
     }
 }
