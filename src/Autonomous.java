@@ -19,9 +19,9 @@ public class Autonomous {
 
         Command.setDriver(driver);
 
-        scheduler.add(new Command(Command.FULL_FORWARD, 2500));
-        scheduler.add(new Command(Command.FULL_STOP, 1000));
-        scheduler.add(new Command(Command.FULL_REVERSE, 1000));
+        scheduler.add(new Command(PacketBuilder.FULL_FORWARD, 2500));
+        scheduler.add(new Command(PacketBuilder.FULL_STOP, 1000));
+        scheduler.add(new Command(PacketBuilder.FULL_REVERSE, 1000));
         scheduler.start();
 
     }
