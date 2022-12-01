@@ -2,7 +2,8 @@ import VexnetDriver.VEXnetDriver;
 
 public class LiveOperation {
     
-    public static VEXnetDriver driver = null;
+    public static VEXnetDriver driver;
+    private static SinglePacketControl spc;
 
     public static void main(String[] args) {
         String[] comPorts = VEXnetDriver.availableComPorts();
@@ -13,7 +14,11 @@ public class LiveOperation {
         } else {
             System.out.println("Using: " + comPorts[0]);
             driver = new VEXnetDriver(comPorts[0], VEXnetDriver.DeviceType.VEXnet_Joystick_Partner_Port);
+            spc = new SinglePacketControl(driver);
         }
+
+        spc.setSupplier(null);
+        spc.start();
     }
 
     
