@@ -1,7 +1,8 @@
+package Util;
 import VexnetDriver.VEXnetPacket;
 
 public class PacketBuilder {
-    static VEXnetPacket FULL_STOP = VEXnetPacket.compileControllerPacket(
+    public static VEXnetPacket FULL_STOP = VEXnetPacket.compileControllerPacket(
             (byte) (127), (byte) (127), (byte) (127), (byte) (127),
             false, false,
             false, false,
@@ -9,13 +10,13 @@ public class PacketBuilder {
             false, false, false, false,
             (byte) 127, (byte) 127, (byte) 127);
 
-    static VEXnetPacket FULL_FORWARD = drive(255, 0);
+    public static VEXnetPacket FULL_FORWARD = drive(255, 0);
 
-    static VEXnetPacket FULL_REVERSE = drive(0, 255);
+    public static VEXnetPacket FULL_REVERSE = drive(0, 255);
 
-    static VEXnetPacket FULL_OPEN_CLAW = claw(255);
+    public static VEXnetPacket FULL_OPEN_CLAW = claw(255);
 
-    static VEXnetPacket FULL_CLOSE_CLAW = claw(0);
+    public static VEXnetPacket FULL_CLOSE_CLAW = claw(0);
 
     /** Function used to construct packets that send only driving signals. */
     public static VEXnetPacket drive(int i1, int i2) {

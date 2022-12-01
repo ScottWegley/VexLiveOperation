@@ -1,3 +1,4 @@
+package Util;
 import java.util.LinkedList;
 
 import VexnetDriver.VEXnetDriver;
@@ -7,7 +8,7 @@ import VexnetDriver.VEXnetDriver;
  * On run, these commands are iterated through and executed.
  * Previous commands must finish before continuing to the next.
  */
-class Scheduler extends Thread {
+public class Scheduler extends Thread {
     /**A FIFO LinkedList of {@link Command}'s to be executed sequentially.
      * Added to through {@link #add(Command)} and cleared with {@link #reset()}
      */

@@ -1,3 +1,6 @@
+import Util.Command;
+import Util.PacketBuilder;
+import Util.Scheduler;
 import VexnetDriver.VEXnetDriver;
 
 public class Autonomous {

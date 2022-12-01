@@ -1,3 +1,5 @@
+package Util;
+
 import VexnetDriver.VEXnetDriver;
 import VexnetDriver.VEXnetPacket;
 
@@ -8,7 +10,7 @@ import VexnetDriver.VEXnetPacket;
  * This last packets makes the transition to the next command smoother on the
  * motors.
  */
-class Command extends Thread {
+public class Command extends Thread {
     /**
      * Stores the packet that is sent on execution.
      * Assigned in the constructor.
