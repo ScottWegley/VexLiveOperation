@@ -16,11 +16,18 @@ public class SinglePacketControl extends Thread {
         logger.deactivate();
     }
 
-    public synchronized void activate(){
+    @Override
+    public void interrupt() {
+        logger.deactivate();
+        deactivate();
+        super.interrupt();
+    }
+
+    private synchronized void activate() {
         active = true;
     }
 
-    private synchronized void deactivate(){
+    private synchronized void deactivate() {
         active = false;
     }
 
