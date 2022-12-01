@@ -52,7 +52,7 @@ public class Command extends Thread {
             System.out.println("Command Begins");
             for (int i = 0; i < this.toExecute.data.length; i++) {
                 if (this.toExecute.data[i] != PacketBuilder.FULL_STOP.data[i]) {
-                    System.out.println(PacketData.values()[i] + ": " + this.toExecute.data[i]);
+                    System.out.println(PacketBuilder.PacketData.values()[i] + ": " + this.toExecute.data[i]);
                 }
             }
             long start = System.currentTimeMillis();
