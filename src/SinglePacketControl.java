@@ -38,14 +38,14 @@ public class SinglePacketControl extends Thread {
         active = false;
     }
 
-    public synchronized void updatePacket() {
+    private synchronized void updatePacket() {
         currentState = PacketBuilder.fullControl(supplier.getLeftDrive(),
                 supplier.getRightDrive(),
                 supplier.getArmPower(),
                 supplier.getClawPower());
     }
 
-    public synchronized VEXnetPacket getPacket() {
+    private synchronized VEXnetPacket getPacket() {
         return currentState;
     }
 
