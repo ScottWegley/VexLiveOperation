@@ -58,4 +58,17 @@ public class PacketBuilder {
         } else
             return FULL_STOP;
     }
+
+    public static VEXnetPacket fullControl(int i1, int i2, int i3, int i4){
+        if (i1 <= 255 && i1 >= 0 && i2 <= 255 && i2 >= 0 && i3 <= 255 && i3 >= 0 && i4 <= 255 && i4 >= 0) {
+            return VEXnetPacket.compileControllerPacket(
+                    (byte) (i1), (byte) (i2), (byte) (i3), (byte) (i4),
+                    false, false,
+                    false, false,
+                    false, false, false, false,
+                    false, false, false, false,
+                    (byte) 127, (byte) 127, (byte) 127);
+        } else
+            return FULL_STOP;
+    }
 }
