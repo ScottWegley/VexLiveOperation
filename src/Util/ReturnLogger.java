@@ -11,11 +11,16 @@ class ReturnLogger extends Thread {
     /**Boolean used to reflect the state of the thread
      * that starts return logger.
      * @see #deactivate()
+     * @see #activate()
      */
     private boolean active = false;
 
     private VEXnetDriver driver;
 
+    /**Creates a new {@link ReturnLogger} with a 
+     * {@link VEXnetDriver} to listen to for
+     * receiving packets to log.
+    */
     public ReturnLogger(VEXnetDriver driv){
         driver = driv;
     }
@@ -33,7 +38,7 @@ class ReturnLogger extends Thread {
 
     /** Used to force the thread to finish. 
      * Useless if the thread has not been started.
-     * @see #active
+     * @see #deactivate()
     */
     public synchronized void deactivate() {
         active = false;
@@ -41,7 +46,7 @@ class ReturnLogger extends Thread {
 
     /** (OPTIONAL) Used to enable the thread loop. 
      * Only useful before thread start.
-     * @see #active
+     * @see #activate()
     */
     public synchronized void activate() {
         active = true;
