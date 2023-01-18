@@ -39,6 +39,17 @@ public class SinglePacketControl extends Thread {
         logger = new ReturnLogger(this.driver);
     }
 
+    /**Creates a new {@link SinglePacketControl} with
+     * a {@link VEXnetDriver} to send packets from.  Also
+     * sets the {@link #supplier} via {@link #setSupplier(PowerSupplier)}.
+     */
+    public SinglePacketControl(VEXnetDriver driv, PowerSupplier suppl){
+        currentState = PacketBuilder.FULL_STOP;
+        this.driver = driv;
+        logger = new ReturnLogger(this.driver);
+        setSupplier(suppl);
+    }
+
     @Override
     public void run() {
         if (!active)
@@ -97,7 +108,8 @@ public class SinglePacketControl extends Thread {
     }
 
     /** (REQUIRED) Used to store the supplier from which 
-     * this controller will pull values to send.
+     * this controller will pull values to send.  On call, it
+     * activates the thread via {@link #activate()}
      * @see PowerSupplier
     */
     public synchronized void setSupplier(PowerSupplier inSupplier) {
