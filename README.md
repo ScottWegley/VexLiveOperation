@@ -1,0 +1,3 @@
+# VexLiveOperation
+This was my first real experience with writing wrappers for other people's code.  I have a decent amount of experience working with Robots, so creating a Live control mode wasnt' too difficult.  Even less so thanks to the communication protocol already being completed.
+My only true endeavour with this project was to make it easier to use.  My primary contributions to this project were a PacketWrapper to make it easy to read communication code and a system to turn any device that Java can interface with into a controller.  Additionally, I added some logging functionality to monitor the connection between your computer and the robot.
